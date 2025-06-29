@@ -1,0 +1,22 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html>
+<head><title>Library System</title></head>
+<body>
+    <h1>All Books</h1>
+    <a href="/add-book">Add Book</a> |
+    <a href="/borrow-book">Borrow Book</a>
+    <table border="1">
+        <tr><th>ID</th><th>Title</th><th>Author</th><th>Available</th><th>Action</th></tr>
+        {% for book in books %}
+        <tr>
+            <td>{{ book[0] }}</td>
+            <td>{{ book[1] }}</td>
+            <td>{{ book[2] }}</td>
+            <td>{{ 'Yes' if book[3] else 'No' }}</td>
+            <td><a href="/delete/{{ book[0] }}">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
