@@ -74,5 +74,4 @@ def api_books():
     data = cur.fetchall()
     return jsonify(data)
 
-if __name__ == '__main__':
-    app.run(debug=True)
+
